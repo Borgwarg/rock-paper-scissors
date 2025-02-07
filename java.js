@@ -59,8 +59,6 @@ function getHumanChoice() {
 }
 
 
- let humanScore = 0;
-let computerScore = 0;
 
 /* Pseudocode single round
     FUNCTION single round - takes two arguments: humanChoice and ComputerChoice
@@ -86,7 +84,11 @@ let computerScore = 0;
         -display message "Draw"
 */
 
+let humanScore = 0;
+let computerScore = 0;
+
 function playRound(humanChoice, computerChoice) {
+
     if (computerChoice == "rock" && humanChoice == "paper") {
         console.log("You win!");
         humanScore += 1;
@@ -108,12 +110,9 @@ function playRound(humanChoice, computerChoice) {
     } else {
         console.log("Draw!");
     }
+
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
-
-playRound(humanChoice, computerChoice);
 
 
 /* Pseudocode for playing x rounds
@@ -132,3 +131,21 @@ playRound(humanChoice, computerChoice);
             -Display message "Draw!"
 */
 
+function playGame(rounds) {
+    let played_rounds = 0;
+
+    for (let i = 1; i <= rounds; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+        played_rounds += 1;
+    }
+    
+    if (humanScore > computerScore) {
+        console.log("You win the game!");
+    } else if (humanScore < computerScore) {
+        console.log("You lose the game") 
+    } else {
+        console.log("Draw!")
+    }
+}
+
+playGame(5);
