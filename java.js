@@ -52,7 +52,7 @@ let computerChoice = (getComputerChoice(getRandomInt(3)));
         RETURN choice
 */
 
-function humanChoice() {
+function getHumanChoice() {
     let choice = "";
 
     while (choice !== "rock" && choice !== "paper" && choice !== 'scissors') {
@@ -62,4 +62,31 @@ function humanChoice() {
     return choice;
 }
 
-console.log(humanChoice());
+console.log(getHumanChoice());
+
+let humanScore = 0;
+let computerScore = 0;
+
+/* Pseudocode single round
+    FUNCTION single round - takes two arguments: humanChoice and ComputerChoice
+    IF computerchoice equals rock AND humanchoice equals paper:
+        -Display message "You win!"
+        -Increment playerscore by 1
+    ELSE IF computerchoice equals rock AND humanchoice equals scissors:
+        -display message "You lose"
+        -increment computerscore by 1
+    ELSE IF computerchoice equals paper AND humanchoice equals scissors:
+        -display message "You win"
+        -increment playerscore by 1
+    ELSE IF computerchoice equals paper AND humanchoice equals rock:
+        -display message "You lose"
+        -increment computerscore by 1
+    ELSE IF computerchoice equals scissors AND humanchoice equals rock:
+        -display message "You win"
+        -increment playerscore by 1
+    ELSE IF computerchoice equals scissors AND humanchoice equals paper:
+        -display "you lose"
+        -increment computerscore by 1
+    ELSE
+        -display message "Draw"
+*/
