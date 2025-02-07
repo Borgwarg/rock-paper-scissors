@@ -1,7 +1,7 @@
 /*  Problem description:
 Write a program that takes input from a user, 
 compares that input to input from the computer 
-and returns the outcome of that comparison to the user.
+and outputs the outcome of that comparison to the user.
 
 Subproblems:
 1-Write function to get computerchoice
@@ -12,22 +12,17 @@ Subproblems:
 -->
 
 <!-- 1 - Pseudocode computer choice function: 
--input: three values: rock, paper and scissors
--desired output: one of three above values, chosen randomly
--necessary steps: 
     FUNCTION that randomly returns number 1, 2 or 3:
 
-    Store that number in a variable
-
-    IF function returns 1:
-        return rock
-    ELSE IF function returns 2:
-        return paper
-    ELSE:
-        return scissors  
-        
-    store the result in variable
-    
+    FUNCTION to return computer choice:
+        IF function returns 1:
+            return rock
+        ELSE IF function returns 2:
+            return paper
+        ELSE:
+            return scissors  
+            
+        store the result in variable
 */
 
 function getRandomInt(max) {
@@ -48,3 +43,23 @@ function getComputerChoice(number) {
 let computerChoice = (getComputerChoice(getRandomInt(3)));
 
 
+/* Pseudocode human choice function
+    FUNCTION human choice:
+        LET empty variable chocie
+        WHILE choice is not equal to rock OR paper OR scissors:
+            -PROMPT user for input "Rock, Paper, Scissors?"
+            -Store input in variable choice
+        RETURN choice
+*/
+
+function humanChoice() {
+    let choice = "";
+
+    while (choice !== "rock" && choice !== "paper" && choice !== 'scissors') {
+        choice = prompt("Rock, Paper, Scissors?");
+        choice = choice.toLowerCase();
+    }
+    return choice;
+}
+
+console.log(humanChoice());
