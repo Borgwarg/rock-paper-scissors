@@ -25,22 +25,18 @@ Subproblems:
         store the result in variable
 */
 
-function getRandomInt(max) {
-    return Math.floor((Math.random() * max) + 1);
-}
 
-
-function getComputerChoice(number) {
+function getComputerChoice() {
+    number = Math.floor((Math.random() * 3) + 1);
     if (number === 1) {
-        return "Rock"
+        return "rock"
     } else if (number === 2) {
-        return "Paper"
+        return "paper"
     } else {
-        return "Scissors"
+        return "scissors"
     }
 }
 
-let computerChoice = (getComputerChoice(getRandomInt(3)));
 
 
 /* Pseudocode human choice function
@@ -62,9 +58,8 @@ function getHumanChoice() {
     return choice;
 }
 
-console.log(getHumanChoice());
 
-let humanScore = 0;
+ let humanScore = 0;
 let computerScore = 0;
 
 /* Pseudocode single round
@@ -90,3 +85,35 @@ let computerScore = 0;
     ELSE
         -display message "Draw"
 */
+
+function playRound(humanChoice, computerChoice) {
+    if (computerChoice == "rock" && humanChoice == "paper") {
+        console.log("You win!");
+        humanScore += 1;
+    } else if (computerChoice == "rock" && humanChoice == "scissors") {
+        console.log("You lose!");
+        computerScore += 1;
+    } else if (computerChoice == "paper" && humanChoice == "scissors") {
+        console.log("You win!");
+        humanScore += 1;
+    } else if (computerChoice == "paper" && humanChoice == "rock") {
+        console.log("You lose!");
+        computerScore += 1
+    } else if (computerChoice == "scissors" && humanChoice == "rock") {
+        console.log("You win!");
+        humanScore += 1;
+    } else if (computerChoice == "scissors" && humanChoice == "paper") {
+        console.log("You lose!");
+        computerScore += 1;
+    } else {
+        console.log("Draw!");
+    }
+}
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
+
+console.log(humanScore);
+console.log(computerScore);
