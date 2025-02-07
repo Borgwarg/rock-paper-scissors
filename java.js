@@ -136,13 +136,15 @@ function playGame(rounds) {
 
     for (let i = 1; i <= rounds; i++) {
         playRound(getHumanChoice(), getComputerChoice());
+        console.log(`Your score is: ${humanScore}`);
+        console.log (`Computerscore is: ${computerScore}`);
         played_rounds += 1;
     }
+    
     
     if (humanScore > computerScore) {
         console.log("You win the game!");
     } else if (humanScore < computerScore) {
-        console.log("You lose the game") 
     } else {
         console.log("Draw!")
     }
