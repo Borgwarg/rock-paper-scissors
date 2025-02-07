@@ -115,5 +115,20 @@ const computerChoice = getComputerChoice();
 
 playRound(humanChoice, computerChoice);
 
-console.log(humanScore);
-console.log(computerScore);
+
+/* Pseudocode for playing x rounds
+    FUNCTION to play x rounds - takes number of rounds as argument
+        LET variable to store score of player
+        LET variable to store score of computer
+        LET variable to store number of played rounds
+        WHILE number of played rounds does not equal function argument:
+            CALL playround function
+            Increment number of rounds  
+        IF humanscore is greater than computerscore:
+            -Display message "You win the game!"
+        ELSE IF humanscore is less than computerscore:
+            -Display message "You lose the game"
+        ELSE
+            -Display message "Draw!"
+*/
+
