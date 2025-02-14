@@ -131,23 +131,34 @@ function playRound(humanChoice, computerChoice) {
             -Display message "Draw!"
 */
 
-function playGame(rounds) {
-    let played_rounds = 0;
+// function playGame(rounds) {
+//     let played_rounds = 0;
 
-    for (let i = 1; i <= rounds; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
-        console.log(`Your score is: ${humanScore}`);
-        console.log (`Computerscore is: ${computerScore}`);
-        played_rounds += 1;
-    }
+//     for (let i = 1; i <= rounds; i++) {
+//         playRound(getHumanChoice(), getComputerChoice());
+//         console.log(`Your score is: ${humanScore}`);
+//         console.log (`Computerscore is: ${computerScore}`);
+//         played_rounds += 1;
+//     }
     
     
-    if (humanScore > computerScore) {
-        console.log("You win the game!");
-    } else if (humanScore < computerScore) {
-    } else {
-        console.log("Draw!")
-    }
-}
+//     if (humanScore > computerScore) {
+//         console.log("You win the game!");
+//     } else if (humanScore < computerScore) {
+//     } else {
+//         console.log("Draw!")
+//     }
+// }
 
-playGame(5);
+// playGame(5);
+
+/* Pseudocode playerSelection buttons
+
+Input: user selects on of three buttons
+Output: playRound funtion is called using playerSelection
+Steps:
+    -Create three buttonelements in HTML
+    -Store buttonelements in java-variables using queryselector 
+    -Create div buttons and add eventlistener for click to div
+    -Eventlistener calls function taking event as parameter to determine target.id
+    -Call playRound function using switch statement and target id to play correct playerselection
