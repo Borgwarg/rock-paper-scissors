@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(161, 48, 181);
+}
+
+.title {
+    text-align: center;
+    color: goldenrod;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}   
+
+#selectors {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    padding: 32px;
+}
+
+#rstcontainer {
+    display: flex;
+    justify-content: center;
+
+}
+
+.selectorButton, #resetbtn {
+    min-width: 64px;
+}
