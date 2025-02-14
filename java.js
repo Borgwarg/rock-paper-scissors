@@ -89,27 +89,36 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
 
+    const resultsContainer = document.querySelector("#resultContainer");
+    let result = document.querySelector("#result");
+    let computerscore = document.querySelector("#computerscore");
+    let playerscore = document.querySelector("#playerscore");
+
     if (computerChoice == "rock" && humanChoice == "paper") {
-        console.log("You win!");
+        result.textContent = "You win!";
         humanScore += 1;
     } else if (computerChoice == "rock" && humanChoice == "scissors") {
-        console.log("You lose!");
+        result.textContent = "You lose!";
         computerScore += 1;
     } else if (computerChoice == "paper" && humanChoice == "scissors") {
-        console.log("You win!");
+        result.textContent = "You win!";
         humanScore += 1;
     } else if (computerChoice == "paper" && humanChoice == "rock") {
-        console.log("You lose!");
+        result.textContent = "You lose!";
         computerScore += 1
     } else if (computerChoice == "scissors" && humanChoice == "rock") {
-        console.log("You win!");
+        result.textContent = "You win!";
         humanScore += 1;
     } else if (computerChoice == "scissors" && humanChoice == "paper") {
-        console.log("You lose!");
+        result.textContent = "You lose!";
         computerScore += 1;
     } else {
-        console.log("Draw!");
+        result.textContent = "Draw!";
     }
+
+    playerscore.textContent = `Playerscore: ${humanScore}`;
+    computerscore.textContent =  `Computerscore: ${computerScore}`;
+
 
 }
 
