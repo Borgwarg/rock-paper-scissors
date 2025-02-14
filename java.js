@@ -87,12 +87,11 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
+let result = document.querySelector("#result");
+let computerscore = document.querySelector("#computerscore");
+let playerscore = document.querySelector("#playerscore");
 
-    const resultsContainer = document.querySelector("#resultContainer");
-    let result = document.querySelector("#result");
-    let computerscore = document.querySelector("#computerscore");
-    let playerscore = document.querySelector("#playerscore");
+function playRound(humanChoice, computerChoice) {
 
     if (computerChoice == "rock" && humanChoice == "paper") {
         result.textContent = "You win!";
@@ -119,6 +118,11 @@ function playRound(humanChoice, computerChoice) {
     playerscore.textContent = `Playerscore: ${humanScore}`;
     computerscore.textContent =  `Computerscore: ${computerScore}`;
 
+    if (humanScore === 5) {
+        result.textContent = "You win the game!";
+    } else if (computerScore === 5) {
+        result.textContent = "You lose the game!"
+    }
 
 }
 
@@ -199,3 +203,14 @@ function playGame() {
 }
 
 playGame();
+
+function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+    playerscore.textContent = "";
+    computerscore.textContent = "";  
+    result.textContent = ""
+}
+
+resetButton = document.querySelector("#resetbtn");
+resetButton.addEventListener("click", resetGame);
