@@ -162,3 +162,31 @@ Steps:
     -Create div buttons and add eventlistener for click to div
     -Eventlistener calls function taking event as parameter to determine target.id
     -Call playRound function using switch statement and target id to play correct playerselection
+*/
+
+function playGame() {
+    const rockbtn = document.querySelector("#rock");
+    const paperbtn = document.querySelector("#paper");
+    const scissorsbtn = document.querySelector("#scissors");
+
+    const selectors = document.querySelector("#selectors");
+
+    selectors.addEventListener("click", (e) => {
+        let target = e.target;
+
+        switch (target.id) {
+            case "rock":
+                playRound("rock", getComputerChoice());
+                break;
+
+            case "paper":
+                playRound("paper", getComputerChoice());
+                break;
+            case "scissors":
+                playRound("scissors", getComputerChoice());
+                break;
+        }
+    });
+}
+
+playGame();
