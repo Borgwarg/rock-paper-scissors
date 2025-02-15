@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(255, 142, 244);
+    background-color:rgb(255, 68, 236);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -9,7 +9,8 @@ body {
 .title {
     text-align: center;
     color: rgb(255, 204, 0);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 48px;
 }   
 
 #selectors {
@@ -39,8 +40,8 @@ body {
     width: 350px;
     height: 200px;
     border: 2px solid rgb(255, 204, 0);
-    border-radius: 5px;
-    padding:8px;
+    background-color: rgb(255, 142, 244);
+    padding:16px;
   
 }
 
@@ -49,10 +50,21 @@ body {
     justify-content: space-between;
     min-width: 350px;
     justify-self: flex-end;
+
 }
 
 #result {
     align-self: center;
-    padding-top: 60px;
-    font-size: 64px;
+    padding-top: 70px;
+    font-size: 40px;
+}
+
+button {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(97, 97, 97);
+    border-radius: 0px;
+}
+
+button:hover {
+    color: rgb(255, 53, 53);
 }
